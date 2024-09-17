@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "AutoPause",
+  "version": "1.0",
+  "description": "Optimized Multitasking: Automatically pauses YouTube videos when switching to other tabs or applications 🌐🛑, and resumes playback when returning to the video tab 📺🔄🎥, ensuring a seamless experience without manual intervention.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting"  ],
+  "host_permissions":[
+    "https://www.youtube.com/*"],
+
+  "background":{
+    "service_worker":"background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+   
+    "128": "UpdatedLogo1.png"
+  }
+ 
+}
